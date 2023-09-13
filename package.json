@@ -6,7 +6,7 @@
   "author": "xuerzong <xuerzong@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "switch": "node ./scripts/switch.js"
+    "build": "node ./scripts/build.js"
   },
   "devDependencies": {
     "fs-extra": "^11.1.1",
