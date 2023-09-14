@@ -21,4 +21,8 @@
   - context-menus-v2
 
 - devtools page demos
+
   - devtools-page
+
+- new tab
+  - new-tab
