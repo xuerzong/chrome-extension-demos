@@ -6,10 +6,24 @@
   "author": "xuerzong <xuerzong@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "node ./scripts/build.js"
+    "build": "node ./scripts/build.js",
+    "format": "biome format . --write",
+    "prepare": "husky install"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.1.2",
+    "esbuild": "^0.19.3",
     "fs-extra": "^11.1.1",
+    "husky": "^8.0.3",
+    "prettier": "^3.0.3",
     "prompts": "^2.4.2"
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "biome format --write"
+    ],
+    "*.{css,md}": [
+      "prettier --write"
+    ]
   }
 }
