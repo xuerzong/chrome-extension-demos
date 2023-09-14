@@ -7,5 +7,4 @@ const createPopup = (text) => {
 
 chrome.runtime.onMessage.addListener(({ text = '' }) => {
   createPopup(text)
-  return Promise.resolve({ msg: 'ok' })
 })

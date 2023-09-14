@@ -1,7 +1,18 @@
-const okBtn = document.getElementById('okBtn')
-const colorInput = document.getElementById('colorInput')
+const getCurrentTab = async () => {
+  const tabs = await chrome.tabs.query({
+    active: true,
+    currentWindow: true
+  })
+  return tabs[0]
+}
 
+const okBtn = document.getElementById('okBtn')
+const colorSelect = document.getElementById('colorSelect')
 okBtn.addEventListener('click', () => {
-  const color = colorInput.value
-  console.log(color)
+  const color = colorSelect.value
+  getCurrentTab().then((tab) => {
+    console.log(tab)
+    if (!tab) return
+    chrome.tabs.sendMessage(tab.id, { color })
+  })
 })
